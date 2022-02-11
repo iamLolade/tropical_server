@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from 'dotenv';
 import mongoose from "mongoose";
-
+import router from "./routes/fruitRoute";
 import cors from "cors";
 
 dotenv.config();
@@ -15,6 +15,8 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+
+app.use("/", router)
 
 //port
 const port = process.env.PORT || 4000;
