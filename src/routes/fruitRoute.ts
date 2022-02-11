@@ -9,4 +9,7 @@ router.get("/fruit", getFruits)
 //Post Request
 router.post("/fruit", addFruit)
 
+//Delete Request
+router.delete("/:id/fruit", )
+
 export default router;
