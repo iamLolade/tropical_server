@@ -32,3 +32,16 @@ export const getFruits = async (req: Request, res: Response, next: NextFunction)
     }
 
 }
+
+export const removeFruit = async (req: Request, res: Response, next: NextFunction) => {
+
+    const id = req.params.id;
+
+    try {
+        const data = await Fruit.findByIdAndDelete({ _id: id})
+        res.status(200).json({message: "Fruit deleted", data })
+    } catch (error) {
+        res.status(500).json(error)
+    }
+
+}

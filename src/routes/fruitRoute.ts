@@ -1,5 +1,5 @@
 import express from "express";
-import { addFruit, getFruits } from "../controller/fruitController";
+import { addFruit, getFruits, removeFruit } from "../controller/fruitController";
 
 const router = express.Router();
 
@@ -10,6 +10,8 @@ router.get("/fruit", getFruits)
 router.post("/fruit", addFruit)
 
 //Delete Request
-router.delete("/:id/fruit", )
+router.delete("/:id/fruit", removeFruit)
 
 export default router;
+
+
